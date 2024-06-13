@@ -8,15 +8,15 @@ pipeline {
         }
         stage('Build') {
             steps { 
-                sh '/opt/maven/bin/mvn clean package ' 
+                sh 'mvn clean package '
             }
         }
         stage('Test') {
             steps {
-                sh '''/opt/maven/bin/mvn sonar:sonar \\
-                      -Dsonar.projectKey=studentapp \\
-                      -Dsonar.host.url=http://54.175.147.9:9000 \\
-                      -Dsonar.login=6d788633c1850b8f6fc3124dd593dcdb49773208'''
+                sh '''mvn sonar:sonar \\
+  -Dsonar.projectKey=studentapp \\
+  -Dsonar.host.url=http://52.91.116.200:9000 \\
+  -Dsonar.login=108f1ac163e9f9d6ba1f4c3d2269f84981411431'''
             }
         }
         stage('Deploy') {
